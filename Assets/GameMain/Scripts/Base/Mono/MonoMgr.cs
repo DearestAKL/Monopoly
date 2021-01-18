@@ -14,6 +14,7 @@ namespace Akari
         {
             //保证了MonoController对象的唯一性
             GameObject obj = new GameObject("MonoController");
+            obj.transform.SetParent(GameEntry.GameEntryTransform);
             controller = obj.AddComponent<MonoController>();
         }
 

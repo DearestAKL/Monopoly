@@ -8,11 +8,6 @@ namespace Akari
     {
         private ScenesMgr ScenesManager;
 
-        private void Awake()
-        {
-            Init();
-        }
-
         public override void Init()
         {
             base.Init();
@@ -39,9 +34,8 @@ namespace Akari
         #region Event
         private void OnStart()
         {
-            //GameEntry.UI.OpenPanel<UIMainMenuForm>("UIMainMenuForm",E_UI_Layer.Bot);
-            ScenesManager.LoadSceneAsyn("Menu", LoadSuccess);
-            Debug.Log("==============================");
+            GameEntry.UI.OpenPanel<UILoadingForm>("UILoadingForm", E_UI_Layer.Top);
+            ScenesManager.LoadSceneAsyn("Game", LoadSuccess);
         }
 
         private void OnContinue()

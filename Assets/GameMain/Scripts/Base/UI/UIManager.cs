@@ -33,19 +33,13 @@ namespace Akari
         public UIManager()
         {
             // 创建Canvas 让其过场景的时候 不被移除
-            GameObject obj = ResMgr.GetInstance().Load<GameObject>("UI/Canvas");
-            Transform canvas = obj.transform;
-            GameObject.DontDestroyOnLoad(obj);
+            Transform canvas = GameEntry.GameEntryTransform.Find("MainCanvas");
 
             //找到各层
             bot = canvas.Find("Bot");
             mid = canvas.Find("Mid");
             top = canvas.Find("Top");
             system = canvas.Find("System");
-
-            // EventSystem 让其过场景的时候 不被移除
-            obj = ResMgr.GetInstance().Load<GameObject>("UI/EventSystem");
-            GameObject.DontDestroyOnLoad(obj);
         }
 
 

@@ -6,13 +6,7 @@ namespace Akari
 {
     public class GameEntry : MonoBehaviour
     {
-        public Camera UICamera
-        {
-            get;
-            private set;
-        }
-
-        public Camera MainCamera
+        public static Transform GameEntryTransform
         {
             get;
             private set;
@@ -53,11 +47,11 @@ namespace Akari
 
         void Start()
         {
-            UICamera = transform.Find("UICamera").GetComponent<Camera>();
-            MainCamera = transform.Find("MainCamera").GetComponent<Camera>();
-
+            GameEntryTransform = transform;
+            
             InitManager();
 
+            Scenes.SetActiveScene("GameStart");
             Scenes.LoadSceneAsyn("Menu", LoadSuccess);
         }
 

@@ -22,7 +22,7 @@ namespace Akari
 
         void Awake()
         {
-
+            Init();
         }
 
         /// <summary>

@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5582494863629771962}
   - component: {fileID: 5700844507178144664}
+  - component: {fileID: 4769908253087094392}
   m_Layer: 5
   m_Name: UIMainMenuForm
   m_TagString: Untagged
@@ -137,6 +138,22 @@ MonoBehaviour:
   - key: btnSetting
     gameObject: {fileID: 9171022910280145660}
     maskindex: 3
+--- !u!114 &4769908253087094392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090652224578213983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1053db8db22b9409f7deed79f6e57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnStart: {fileID: 0}
+  btnContinue: {fileID: 0}
+  btnMod: {fileID: 0}
+  btnSetting: {fileID: 0}
 --- !u!1 &2720274379035536981
 GameObject:
   m_ObjectHideFlags: 0
