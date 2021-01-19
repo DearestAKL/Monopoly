@@ -59,7 +59,7 @@ namespace Akari
                     callBack(panelDic[panelName] as T);
             }
 
-            ResMgr.GetInstance().LoadAsync<GameObject>("UI/" + panelName, (obj) =>
+            ResMgr.GetInstance().LoadAsync<GameObject>(AssetUtility.GetUIAsset(panelName), (obj) =>
              {
              //把他作为Canvas的子对象
              //并且 要设置它的相对位置

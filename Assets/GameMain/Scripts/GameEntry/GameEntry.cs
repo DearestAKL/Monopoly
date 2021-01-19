@@ -43,6 +43,12 @@ namespace Akari
             private set;
         }
 
+        public static ResMgr Res
+        {
+            get;
+            private set;
+        }
+
         #endregion
 
         void Start()
@@ -63,6 +69,7 @@ namespace Akari
             Music = MusicMgr.GetInstance();
             Scenes = ScenesMgr.GetInstance();
             UI = UIManager.GetInstance();
+            Res = ResMgr.GetInstance();
         }
 
         private void LoadSuccess()
