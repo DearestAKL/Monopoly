@@ -4,7 +4,8 @@
         "GameFramework",
         "UnityGameFramework.Runtime",
         "UnityGameFramework.Editor",
-        "Libraries"
+        "Libraries",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

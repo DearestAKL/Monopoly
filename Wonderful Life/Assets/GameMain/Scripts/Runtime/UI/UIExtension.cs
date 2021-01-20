@@ -16,6 +16,9 @@ namespace Akari
 {
     public static class UIExtension
     {
+        /// <summary>
+        /// 界面淡入淡出
+        /// </summary>
         public static IEnumerator FadeToAlpha(this CanvasGroup canvasGroup, float alpha, float duration)
         {
             float time = 0f;
@@ -30,6 +33,9 @@ namespace Akari
             canvasGroup.alpha = alpha;
         }
 
+        /// <summary>
+        /// 滑动条平滑移动
+        /// </summary>
         public static IEnumerator SmoothValue(this Slider slider, float value, float duration)
         {
             float time = 0f;
@@ -44,6 +50,9 @@ namespace Akari
             slider.value = value;
         }
 
+        /// <summary>
+        /// 是否存在界面
+        /// </summary>
         public static bool HasUIForm(this UIComponent uiComponent, UIFormId uiFormId, string uiGroupName = null)
         {
             return uiComponent.HasUIForm((int)uiFormId, uiGroupName);
@@ -73,6 +82,9 @@ namespace Akari
             return uiGroup.HasUIForm(assetName);
         }
 
+        /// <summary>
+        /// 获取界面
+        /// </summary>
         public static UGuiForm GetUIForm(this UIComponent uiComponent, UIFormId uiFormId, string uiGroupName = null)
         {
             return uiComponent.GetUIForm((int)uiFormId, uiGroupName);
@@ -115,11 +127,17 @@ namespace Akari
             return (UGuiForm)uiForm.Logic;
         }
 
+        /// <summary>
+        /// 关闭界面
+        /// </summary>
         public static void CloseUIForm(this UIComponent uiComponent, UGuiForm uiForm)
         {
             uiComponent.CloseUIForm(uiForm.UIForm);
         }
 
+        /// <summary>
+        /// 打开界面
+        /// </summary>
         public static int? OpenUIForm(this UIComponent uiComponent, UIFormId uiFormId, object userData = null)
         {
             return uiComponent.OpenUIForm((int)uiFormId, userData);

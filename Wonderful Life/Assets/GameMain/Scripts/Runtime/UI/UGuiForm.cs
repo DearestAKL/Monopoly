@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
+using TMPro;
 
 namespace Akari
 {
@@ -22,6 +23,8 @@ namespace Akari
         private Canvas m_CachedCanvas = null;
         private CanvasGroup m_CanvasGroup = null;
         private List<Canvas> m_CachedCanvasContainer = new List<Canvas>();
+
+        protected GameObject rootGo => gameObject;
 
         public int OriginalDepth
         {
@@ -37,12 +40,7 @@ namespace Akari
             }
         }
 
-        public void Close()
-        {
-            Close(false);
-        }
-
-        public void Close(bool ignoreFade)
+        public void Close(bool ignoreFade = false)
         {
             StopAllCoroutines();
 
@@ -101,6 +99,16 @@ namespace Akari
                 if (!string.IsNullOrEmpty(texts[i].text))
                 {
                     texts[i].text = GameEntry.Localization.GetString(texts[i].text);
+                }
+            }
+
+            TextMeshProUGUI[] mTexts = GetComponentsInChildren<TextMeshProUGUI>(true);
+            for (int i = 0; i < mTexts.Length; i++)
+            {
+                //mTexts[i].font = s_MainFont;
+                if (!string.IsNullOrEmpty(mTexts[i].text))
+                {
+                    mTexts[i].text = GameEntry.Localization.GetString(mTexts[i].text);
                 }
             }
         }

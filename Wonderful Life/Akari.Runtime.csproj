@@ -117,6 +117,8 @@
     <Compile Include="Assets\GameMain\Scripts\Runtime\HPBar\HPBarComponent.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\HPBar\HPBarItem.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\HPBar\HPBarItemObject.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Runtime\Helper\AtlasHelperComponent.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Runtime\Helper\UIEventHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Localization\XmlLocalizationHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Network\CSPacketBase.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Network\CSPacketHeader.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Assets\GameMain\Scripts\Runtime\Procedure\ProcedureSplash.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Procedure\ProcedureUpdateResources.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Procedure\ProcedureUpdateVersion.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Runtime\ReferenceCollector.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Scene\HideByBoundary.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Scene\ScrollableBackground.cs" />
     <Compile Include="Assets\GameMain\Scripts\Runtime\Sound\SoundExtension.cs" />
@@ -363,10 +366,10 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/Github/MyGithub/Wonderful Life/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>E:/Github/MyGithub/Monopoly/Wonderful Life/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>E:/Github/MyGithub/Wonderful Life/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>E:/Github/MyGithub/Monopoly/Wonderful Life/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Program/Unity/Unity2019/2019.4.0f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -713,11 +716,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:/Program/Unity/Unity2019/2019.4.0f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:/Github/MyGithub/Monopoly/Wonderful Life/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Github/MyGithub/Wonderful Life/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/Github/MyGithub/Monopoly/Wonderful Life/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Github/MyGithub/Wonderful Life/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/Github/MyGithub/Monopoly/Wonderful Life/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

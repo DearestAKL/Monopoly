@@ -5,7 +5,6 @@
       <Resource Name="Configs" FileSystem="GameData" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="DataTables" FileSystem="GameData" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Entities" FileSystem="Resources" LoadType="0" Packed="True" />
-      <Resource Name="Fonts" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Localization/Dictionaries" Variant="en-us" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Localization/Dictionaries" Variant="ko-kr" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Localization/Dictionaries" Variant="zh-cn" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
@@ -86,7 +85,6 @@
       <Asset Guid="71646ebaae78d43aeb8b53cacdb69671" ResourceName="Textures" />
       <Asset Guid="72e76810224064300b7d32e8322a5d12" ResourceName="Sounds" />
       <Asset Guid="738bdf56857a65f479c367c7b62c4ad7" ResourceName="Entities" />
-      <Asset Guid="77cbb7c5404c10242ab59953e0746314" ResourceName="Fonts" />
       <Asset Guid="7d5f7699d6d1d48e485ac71126e12061" ResourceName="Entities" />
       <Asset Guid="7e91cd9bad7babf4b975882a4b7453cb" ResourceName="Textures" />
       <Asset Guid="7eae0d2701845a54aa570b07c55dab44" ResourceName="Textures" />
