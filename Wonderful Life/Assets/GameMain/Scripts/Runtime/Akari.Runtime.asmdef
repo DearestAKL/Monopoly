@@ -1,0 +1,18 @@
+{
+    "name": "Akari.Runtime",
+    "references": [
+        "GameFramework",
+        "UnityGameFramework.Runtime",
+        "UnityGameFramework.Editor",
+        "Libraries"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
