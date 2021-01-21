@@ -1,88 +1,57 @@
-﻿//------------------------------------------------------------
-// Game Framework
-// Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.Event;
-using UnityEngine;
-using UnityGameFramework.Runtime;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Akari
 {
     public abstract class GameBase
     {
+        /// <summary>
+        /// 游戏模式
+        /// </summary>
         public abstract GameMode GameMode
         {
             get;
         }
 
-        protected ScrollableBackground SceneBackground
-        {
-            get;
-            private set;
-        }
-
+        /// <summary>
+        /// 游戏结束
+        /// </summary>
         public bool GameOver
         {
             get;
             protected set;
         }
 
-        private MyAircraft m_MyAircraft = null;
-
+        /// <summary>
+        /// 游戏数据初始化
+        /// </summary>
         public virtual void Initialize()
         {
-            GameEntry.Event.Subscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
-            GameEntry.Event.Subscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
 
-            SceneBackground = Object.FindObjectOfType<ScrollableBackground>();
-            if (SceneBackground == null)
-            {
-                Log.Warning("Can not find scene background.");
-                return;
-            }
-
-            SceneBackground.VisibleBoundary.gameObject.GetOrAddComponent<HideByBoundary>();
-            GameEntry.Entity.ShowMyAircraft(new MyAircraftData(GameEntry.Entity.GenerateSerialId(), 10000)
-            {
-                Name = "My Aircraft",
-                Position = Vector3.zero,
-            });
-
-            GameOver = false;
-            m_MyAircraft = null;
         }
 
+        /// <summary>
+        /// 关闭游戏
+        /// </summary>
         public virtual void Shutdown()
         {
-            GameEntry.Event.Unsubscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
-            GameEntry.Event.Unsubscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
+
+        }
+
+        /// <summary>
+        /// 保存游戏
+        /// </summary>
+        public virtual void SaveGame()
+        {
+
         }
 
         public virtual void Update(float elapseSeconds, float realElapseSeconds)
         {
-            if (m_MyAircraft != null && m_MyAircraft.IsDead)
-            {
-                GameOver = true;
-                return;
-            }
-        }
 
-        protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
-        {
-            ShowEntitySuccessEventArgs ne = (ShowEntitySuccessEventArgs)e;
-            if (ne.EntityLogicType == typeof(MyAircraft))
-            {
-                m_MyAircraft = (MyAircraft)ne.Entity.Logic;
-            }
-        }
-
-        protected virtual void OnShowEntityFailure(object sender, GameEventArgs e)
-        {
-            ShowEntityFailureEventArgs ne = (ShowEntityFailureEventArgs)e;
-            Log.Warning("Show entity failure with error message '{0}'.", ne.ErrorMessage);
         }
     }
 }

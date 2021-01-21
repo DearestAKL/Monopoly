@@ -60,5 +60,15 @@ namespace Akari
         {
             return Utility.Text.Format("Assets/GameMain/UI/UISounds/{0}.wav", assetName);
         }
+
+        public static string GetSpriteAtlasAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/GameMain/UI/SpriteAtlas/{0}.spriteatlas", assetName);
+        }
+
+        public static string GetOtherSpriteAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/GameMain/UI/OtherSprite/{0}.png", assetName);
+        }
     }
 }

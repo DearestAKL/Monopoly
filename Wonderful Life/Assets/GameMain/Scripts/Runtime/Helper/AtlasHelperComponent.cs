@@ -6,7 +6,7 @@ using UnityEngine.U2D;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
-namespace Trinity.Hotfix
+namespace Akari
 {
     public class AtlasHelperComponent
     {
@@ -16,7 +16,7 @@ namespace Trinity.Hotfix
 
         private const string str_Common = "Common";
 
-        public void Init()
+        public void Initialize()
         {
             resourceComponent = GameEntry.Resource;
 

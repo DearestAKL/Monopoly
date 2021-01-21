@@ -1,20 +1,10 @@
-﻿//------------------------------------------------------------
-// Game Framework
-// Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
-//------------------------------------------------------------
-
-namespace Akari
+﻿namespace Akari
 {
-    /// <summary>
-    /// 游戏模式。
-    /// </summary>
-    public enum GameMode : byte
+    public enum GameMode
     {
         /// <summary>
-        /// 生存模式。
+        /// 普通
         /// </summary>
-        Survival,
+        Normal,
     }
 }

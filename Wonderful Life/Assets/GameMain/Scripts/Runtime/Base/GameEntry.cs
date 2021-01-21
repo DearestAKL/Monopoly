@@ -18,6 +18,18 @@ namespace Akari
         {
             InitBuiltinComponents();
             InitCustomComponents();
+
+            AtlasHelper = new AtlasHelperComponent();
+            AtlasHelper.Initialize();
+        }
+
+        /// <summary>
+        /// 图集图片管理组件
+        /// </summary>
+        public static AtlasHelperComponent AtlasHelper
+        {
+            get;
+            private set;
         }
     }
 }

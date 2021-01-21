@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
 namespace Akari
@@ -16,6 +17,12 @@ namespace Akari
         private GameObject m_QuitButton = null;
 
         private ProcedureMenu m_ProcedureMenu = null;
+
+        public Button createBtn;
+        public int cardId;
+        public string cardName;
+        public string cardContent;
+        public CardType cardType;
 
         public void OnStartButtonClick()
         {
@@ -43,6 +50,12 @@ namespace Akari
             });
         }
 
+        public void OnCreatCard()
+        {
+            var userCard = new UserCard(cardId, cardName, cardContent, cardType);
+            GameEntry.Setting.SaveCard(userCard);
+        }
+
 #if UNITY_2017_3_OR_NEWER
         protected override void OnOpen(object userData)
 #else
@@ -59,6 +72,8 @@ namespace Akari
             }
 
             m_QuitButton.SetActive(Application.platform != RuntimePlatform.IPhonePlayer);
+
+            createBtn.onClick.Add(OnCreatCard);
         }
 
 #if UNITY_2017_3_OR_NEWER

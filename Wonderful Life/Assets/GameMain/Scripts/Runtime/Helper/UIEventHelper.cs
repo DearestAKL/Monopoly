@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
-namespace Trinity.Hotfix {
+namespace Akari 
+{
     public static class UIEventHelper
     {
-        private static float outResetStartTime;
         private static bool bClick = true;
         public delegate void ButtonClickBoolAction();
         public delegate void ButtonClickBoolAction<T>(T value);
@@ -17,19 +17,25 @@ namespace Trinity.Hotfix {
         public static void Add(this Button.ButtonClickedEvent buttonClickedEvent, ButtonClickBoolAction action)
         {
             buttonClickedEvent.AddListener(() => {
-                try
+                if (bClick)
                 {
-                    if (bClick)
-                    {
-                        bClick = false;
-                        action.Invoke();
-                        bClick = true;
-                    }
-                }
-                catch (Exception e)
-                {
+                    bClick = false;
+                    action.Invoke();
                     bClick = true;
-                    Log.Warning($"EventHelper 2 ---> {e}");
+                }
+            });
+        }
+
+        //同步带参数
+        public static void Add<T>(this Button.ButtonClickedEvent buttonClickedEvent, ButtonClickBoolAction<T> action, T param)
+        {
+            buttonClickedEvent.AddListener(() =>
+            {
+                if (bClick)
+                {
+                    bClick = false;
+                    action.Invoke(param);
+                    bClick = true;
                 }
             });
         }

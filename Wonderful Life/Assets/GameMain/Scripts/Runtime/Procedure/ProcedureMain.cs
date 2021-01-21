@@ -37,7 +37,7 @@ namespace Akari
         {
             base.OnInit(procedureOwner);
 
-            m_Games.Add(GameMode.Survival, new SurvivalGame());
+            m_Games.Add(GameMode.Normal, new NormalGame());
         }
 
         protected override void OnDestroy(ProcedureOwner procedureOwner)

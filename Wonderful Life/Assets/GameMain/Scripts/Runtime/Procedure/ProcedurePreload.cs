@@ -30,6 +30,8 @@ namespace Akari
             "UIForm",
             "UISound",
             "Weapon",
+
+            "Card",
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();
