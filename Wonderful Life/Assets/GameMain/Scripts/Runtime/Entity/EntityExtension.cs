@@ -103,5 +103,11 @@ namespace Akari
         {
             return --s_SerialId;
         }
+
+
+        public static void ShowPlayer(this EntityComponent entityCompoennt, PlayerData data)
+        {
+            entityCompoennt.ShowEntity(typeof(Player), "Player", Constant.AssetPriority.PlayerAsset, data);
+        }
     }
 }

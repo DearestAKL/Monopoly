@@ -66,9 +66,7 @@ namespace Akari
                 if (gameDataList[i].gameId == gameData.gameId)
                 {
                     //覆盖
-                    gameDataList[i].gameId = gameData.gameId;
-                    gameDataList[i].gameMode = gameData.gameMode;
-                    gameDataList[i].playerDatas = gameData.playerDatas;
+                    gameDataList[i] = gameData;
                     HasGame = true;
                 }
             }

@@ -8,13 +8,15 @@ namespace Akari
     public class NormalGame : GameBase
     {
         private GameData gameData;//游戏数据
-        private int playerCount;
 
         private GameMap gameMap;//游戏地图
         private int maxStepCount;//最大步数
 
-        private List<GameObject> players;//玩家对象
-        private int curPlayerId = 0;
+        private PlayerData[] playerDatas;
+        private Player[] players;
+        private int playerCount;
+
+        private int curPlayerIndex;
 
         public override GameMode GameMode
         {
@@ -27,29 +29,29 @@ namespace Akari
         public override void Initialize()
         {
             base.Initialize();
+            playerCount = 2;
 
-            gameData = new GameData(GameMode.Normal);
-            gameData.AddPlayer(new PlayerData(0, "akl", 0));
-            gameData.AddPlayer(new PlayerData(1, "sxt", 0));
-            playerCount = gameData.playerDatas.Count;
-
+            gameData = new GameData(GameMode.Normal, playerCount);
             gameMap = Object.FindObjectOfType<GameMap>();
-            maxStepCount = gameMap.posArray.Length;
+            playerDatas = new PlayerData[playerCount];
+            players = new Player[playerCount];
 
-            //生成角色对象
+            playerDatas[0] = new PlayerData(GameEntry.Entity.GenerateSerialId(), 10000, 0, "akl", 0)
+            {
+                Position = gameMap.posArray[0].localPosition,
+            };
+            playerDatas[1] = new PlayerData(GameEntry.Entity.GenerateSerialId(), 10000, 1, "sxt", 0)
+            {
+                Position = gameMap.posArray[0].localPosition,
+            };
+
             for (int i = 0; i < playerCount; i++)
             {
-                var assetName = gameData.playerDatas[i].assetName;
-                GameEntry.Resource.LoadAsset(AssetUtility.GetEntityAsset(assetName), typeof(GameObject), new LoadAssetCallbacks(
-                        (assetName, asset, duration, userData) =>
-                        {
-                            var go = GameObject.Instantiate(asset as GameObject);
-                            go.transform.SetParent(gameMap.posArray[0]);
-                            go.transform.localPosition = Vector3.zero;
-                            go.transform.localRotation = Quaternion.identity;
-                            players.Add(go);
-                        }));
+                GameEntry.Entity.ShowPlayer(playerDatas[i]);
+                gameData.SavePlayerData(playerDatas[i]);
             }
+
+            maxStepCount = gameMap.posArray.Length;
         }
 
         public override void Shutdown()
@@ -67,21 +69,44 @@ namespace Akari
         public override void Update(float elapseSeconds, float realElapseSeconds)
         {
             base.Update(elapseSeconds, realElapseSeconds);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //开始 游戏 获取角色
+                for (int i = 0; i < playerCount; i++)
+                {
+                    var player = GameEntry.Entity.GetEntity(playerDatas[i].Id);
+                    players[i] = player.GetComponent<Player>();
+                }
+
+                curPlayerIndex = 0;
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                PlayerRun();
+            }
         }
 
-        private void PlayerMove(int index)
+        private void PlayerRun()
         {
-            //骰子
-            var StepCount = Random.Range(0, 6);
+            //随机骰子
+            int step = Random.Range(1, 4);
+            Debug.Log(step);
 
-
-            var playerData = gameData.playerDatas[index];
-
-            playerData.pos += StepCount;
-            if(playerData.pos >= maxStepCount - 1)
+            //移动
+            var player = players[curPlayerIndex];
+            var path = new Vector3[step];
+            int curPos = player.PlayerData.playerPos;
+            for (int i = 0; i < step; i++)
             {
-                playerData.pos = maxStepCount - 1;
+                path[i] = gameMap.posArray[curPos + i + 1].position;
             }
+            player.MoveToTargetPoint(path);
+
+            //弹出信息界面
+            //效果
+            //选择
         }
     }
 }

@@ -9,9 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akari.Runtime", "Akari.Runt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries", "Libraries.csproj", "{8D289389-14B2-AB27-1DCD-4446472EF229}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{430237F4-9A6F-890E-B5B9-8FA3DB1CAF6E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akari.Editor", "Akari.Editor.csproj", "{29A937A7-13BA-9056-C69B-E4DB95C9767E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityGameFramework.Editor", "UnityGameFramework.Editor.csproj", "{7C9E5E43-8F8F-BCE2-F745-B7DC88B28A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{9EC25680-EC07-5DFE-2129-0EF553116AAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{8D289389-14B2-AB27-1DCD-4446472EF229}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D289389-14B2-AB27-1DCD-4446472EF229}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D289389-14B2-AB27-1DCD-4446472EF229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430237F4-9A6F-890E-B5B9-8FA3DB1CAF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430237F4-9A6F-890E-B5B9-8FA3DB1CAF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430237F4-9A6F-890E-B5B9-8FA3DB1CAF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430237F4-9A6F-890E-B5B9-8FA3DB1CAF6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29A937A7-13BA-9056-C69B-E4DB95C9767E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29A937A7-13BA-9056-C69B-E4DB95C9767E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A937A7-13BA-9056-C69B-E4DB95C9767E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +51,10 @@ Global
 		{7C9E5E43-8F8F-BCE2-F745-B7DC88B28A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9E5E43-8F8F-BCE2-F745-B7DC88B28A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9E5E43-8F8F-BCE2-F745-B7DC88B28A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC25680-EC07-5DFE-2129-0EF553116AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC25680-EC07-5DFE-2129-0EF553116AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC25680-EC07-5DFE-2129-0EF553116AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC25680-EC07-5DFE-2129-0EF553116AAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

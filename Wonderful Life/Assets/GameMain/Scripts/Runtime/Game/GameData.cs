@@ -7,25 +7,27 @@ namespace Akari
         //游戏唯一id
         public int gameId;
         public GameMode gameMode;
-        public List<PlayerData> playerDatas = new List<PlayerData>();
 
-        public GameData(GameMode gameMode)
+        public int playerCount;//玩家 数量
+        public string[] nameArray;//名字信息
+        public int[] posArray;//位置信息
+        public int[] typeIdArray;
+
+        public GameData(GameMode gameMode,int playerCount)
         {
             this.gameMode = gameMode;
+            this.playerCount = playerCount;
+
+            nameArray = new string[playerCount];
+            posArray = new int[playerCount];
+            typeIdArray = new int[playerCount];
         }
 
-        public void AddPlayer(PlayerData playerData)
+        public void SavePlayerData(PlayerData playerData)
         {
-            for (int i = 0; i < playerDatas.Count; i++)
-            {
-                if (playerDatas[i].id == playerData.id)
-                {
-                    //已经存在 该游戏玩家
-                    return;
-                }
-            }
-
-            playerDatas.Add(playerData);
+            nameArray[playerData.playerId] = playerData.playerName;
+            posArray[playerData.playerId] = playerData.playerPos;
+            typeIdArray[playerData.playerId] = playerData.TypeId;
         }
     }
 }
